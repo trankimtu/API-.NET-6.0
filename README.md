@@ -28,5 +28,105 @@ namespace Main.Models
 }
 ```
 ## 3. Controller
+```
+// File: Controllers/SuperHeroController.cs
+using Main.Models;
+using Microsoft.AspNetCore.Components.Web.Virtualization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Main.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SuperHeroController : ControllerBase
+    {
+        private static List<SuperHero> heroes = new List<SuperHero>
+            {
+                new SuperHero
+                {
+                    Id = 1,
+                    Name = "Spider Man",
+                    FirstName = "Peter",
+                    LastName = "Parker",
+                    Place = "New York City"
+                },
+                new SuperHero
+                {
+                    Id = 2,
+                    Name = "Ironman",
+                    FirstName = "Tony",
+                    LastName = "Stark",
+                    Place = "Long Island"
+                }
+            };
+        //====================================================================
+        // Get whole list of SuperHero
+        [HttpGet]
+        public async Task<ActionResult<List<SuperHero>>> Get()
+        {
+            return Ok(heroes); // Ok: 200, BadRequest: 400, NotFound: 404
+        }
+
+
+        //====================================================================
+        // Get superhero by Id
+        // [HttpGet]
+        // [Route("{id}")]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SuperHero>> Get(int id)
+        {
+            // var hero = heroes[id];
+            var hero = heroes.Find(h => h.Id == id);
+            if (hero == null)
+            {
+                return BadRequest("Hero is not found.");
+            }
+            return Ok(hero); // Ok: 200, BadRequest: 400, NotFound: 404
+        }
+
+
+        //====================================================================
+        [HttpPost]
+        public async Task<ActionResult<List<SuperHero>>> AddHero(SuperHero hero)
+        {
+            heroes.Add(hero);
+            return Ok(heroes); // Ok: 200, BadRequest: 400, NotFound: 404
+        }
+
+
+        //====================================================================
+        [HttpPut]
+        public async Task<ActionResult<SuperHero>> UpdateHero( SuperHero request)
+        {
+            var hero = heroes.Find(h => h.Id == request.Id);
+            if (hero == null)
+            {
+                return BadRequest("Hero is not found.");
+            }
+
+            hero.Name = request.Name;
+            hero.FirstName = request.FirstName ;
+            hero.LastName = request.LastName ;
+            hero.Place = request.Place;
+            return Ok(hero); // Ok: 200, BadRequest: 400, NotFound: 404
+        }
+
+
+        //====================================================================
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<SuperHero>> Delete(int id)
+        {
+            var hero = heroes.Find(h => h.Id == id);
+            if (hero == null)
+            {
+                return BadRequest("Hero is not found.");
+            }
+            heroes.Remove(hero);
+            return Ok(heroes); // Ok: 200, BadRequest: 400, NotFound: 404
+        }
+    }
+}
+```
 
 
