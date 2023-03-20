@@ -28,6 +28,10 @@ namespace Main.Models
 }
 ```
 ## 3. Controller
+In Get by id method, use NoCopntent() if not found<br>
+In Put method, use NotFound("string") as an example<br>
+In Delete method, use BadRequest("string") as an example
+
 ```
 // File: Controllers/SuperHeroController.cs
 using Main.Models;
@@ -80,7 +84,7 @@ namespace Main.Controllers
             var hero = heroes.Find(h => h.Id == id);
             if (hero == null)
             {
-                return BadRequest("Hero is not found.");
+                return NoContent();
             }
             return Ok(hero); // Ok: 200, BadRequest: 400, NotFound: 404
         }
@@ -102,7 +106,7 @@ namespace Main.Controllers
             var hero = heroes.Find(h => h.Id == request.Id);
             if (hero == null)
             {
-                return BadRequest("Hero is not found.");
+                return NotFound("Hero is not found.");
             }
 
             hero.Name = request.Name;
@@ -127,6 +131,7 @@ namespace Main.Controllers
         }
     }
 }
+
 ```
 
 
