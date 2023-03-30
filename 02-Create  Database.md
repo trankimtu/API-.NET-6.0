@@ -23,15 +23,15 @@ CREATE TABLE ProjectEmployee.Employee (
 
 ```
 ## 4. Insert data into table
-
+```
 INSERT INTO <Schema name> . <Table name> (<Column 1 name> , <Column 2 name> ,....)
 	VALUES 
 		(<Column 1 value>, <Column 2 value>, ...),
-    (<Column 1 value>, <Column 2 value>, ...),
-    (<Column 1 value>, <Column 2 value>, ...),
-    ...
-    (<Column 1 value>, <Column 2 value>, ...);
-
+    		(<Column 1 value>, <Column 2 value>, ...),
+    		(<Column 1 value>, <Column 2 value>, ...),
+    		...
+    		(<Column 1 value>, <Column 2 value>, ...);
+```
 Example:
 ```
 INSERT INTO ProjectEmployee.Employee(EmployeeName, Department, DateOfJoining, ProfileName)
