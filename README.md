@@ -28,7 +28,7 @@ namespace Main.Models
 }
 ```
 ## 3. Controller
-In Get by id method, use ```NoCopntent()``` if not found<br>
+In Get by id method, use ```NoContent()``` if not found<br>
 In Put method, use ```NotFound("string")``` as an example<br>
 In Delete method, use ```BadRequest("string")``` as an example
 
