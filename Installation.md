@@ -29,4 +29,4 @@ ASP.NET and web development
 
 # 4. Visual Studio Code and Angular related
 
-# 5. [POSTMAN] (https://www.postman.com/downloads/)
+# 5. [POSTMAN](https://www.postman.com/downloads/)
