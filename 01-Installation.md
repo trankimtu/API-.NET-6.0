@@ -1,4 +1,5 @@
-# 1. SQL Server
+# Installation
+## 1. SQL Server
 <ol type="a">
   <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">Download Developer version</li>
   <li>Custom</li>
@@ -12,21 +13,21 @@
 </ol>
 
 
-# 2. SQL Server Management Studio (SSMS)
-## a. Connect to local db
+## 2. SQL Server Management Studio (SSMS)
+### a. Connect to local db
 Server type: Database Engine
 Server name: .
 Authentication: Windows Authentication
-## b. Test SSMS
+### b. Test SSMS
 Go to any table, select *
 
-# 3. Visual Studio
+## 3. Visual Studio
 Select 
 ```
 ASP.NET and web development
 .NET desktop development
 ```
 
-# 4. Visual Studio Code and Angular related
+## 4. Visual Studio Code and Angular related
 
-# 5. [POSTMAN](https://www.postman.com/downloads/)
+## 5. [POSTMAN](https://www.postman.com/downloads/)
