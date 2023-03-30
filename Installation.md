@@ -1,6 +1,6 @@
 # 1. SQL Server
 <ol type="a">
-  <li>[Download Developer version](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)</li>
+  <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">Download Developer version</li>
   <li>Custom</li>
   <li>Install</li>
   <li>New SQL Server standalone installation or add features to an existing installation</li>
